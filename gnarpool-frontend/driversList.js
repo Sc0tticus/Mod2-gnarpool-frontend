@@ -1,6 +1,14 @@
+let dropdown1 = document.querySelector('#dropdown1')
+let dropdown2 = document.querySelector('#dropdown2')
+let dropdown3 = document.querySelector('#dropdown3')
+
 fetch('http://localhost:3000/drivers')
   .then(response => response.json())
   .then(showDrivers)
+
+fetch('http://localhost:3000/drivers')
+  .then(response => response.json())
+  .then(showDriverOptions) 
 
   const driversList = document.getElementById('drivers-list')
 
@@ -16,25 +24,21 @@ fetch('http://localhost:3000/drivers')
     })
   }
 
-  function showRiders(riders){
-    console.log(riders)
-    riders.forEach(rider => {
-      
-      let li = document.createElement('li')
-  
-      li.innerHTML = `<a href='riderShow.html?id=${rider.id}'>${rider.name}</a>`
-      
-      ridersList.appendChild(li)
+  function showDriverOptions(drivers){
+    drivers.forEach(driver => {
+      let option1 = document.createElement('option')
+      let option2 = document.createElement('option')
+      let option3 = document.createElement('option')
+
+      option1.innerText = driver.resort
+      option2.innerText = driver.date
+      option3.innerText = driver.pass
+
+      // option.innerText = power.name 
+      // option.value = power.id
+
+      dropdown1.appendChild(option1)
+      dropdown2.appendChild(option2)
+      dropdown3.appendChild(option3)
     })
   }
-
-  // function createOptions(powers){
-  //   powers.forEach(power => {
-  //     let option = document.createElement('option')
-
-  //     option.innerText = power.name 
-  //     option.value = power.id
-
-  //     dropdown.appendChild(option)
-  //   })
-  // }
