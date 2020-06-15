@@ -10,15 +10,54 @@
     <h1>List of Drivers and Riders</h1>
   </header>
   <main>
-<h2>Drivers</h2>
-  <ul id='drivers-list'></ul>
+<h2><a href='http://localhost:3001/driversList.html'> Drivers </a></h2>
+<form method='POST' action ='http://localhost:3000/drivers'>
+  <input name="name" placeholder="name"/>
+  <input name="phone" placeholder="#"/>
+  <input name="email" placeholder="email"/>
+  <select name="date"></select>
+  <select name="time"></select>
+  <input name="resort" placeholder="resort"/>
+  <input name="pass" placeholder="selector"/>
+  <input name="VenMo" placeholder="venmo"/>
+  <!-- <select name="power" id="power-select"></select> -->
+  <input type='submit'/>
+</form>
+  <!-- <ul id='drivers-list'></ul> -->
 
-<h2>Riders</h2>
-  <ul id='riders-list'></ul>
+<h2><a href='http://localhost:3001/ridersList.html'> Riders </a></h2>
+<form method = 'POST' action='http://localhost:3000/riders'>
 
+<!-- <label>Name</label> -->
+<input name='name' placeholder='name' />
+
+<!-- <label>Phone</label> -->
+<input phone='phone' placeholder='phone' />
+
+<!-- <label>Email</label> -->
+<input email='email' placeholder='email' />
+
+<!-- <label>Departure Date</label> -->
+<input date='date' placeholder='date' />
+
+<!-- <label>Departure Time</label> -->
+<input time='time' placeholder='time' />
+
+<!-- <label>Resort</label> -->
+<input resort='resort' placeholder='resort' />
+
+<!-- <label>Pass</label> -->
+<input pass='pass' placeholder='pass' />
+
+<!-- <label>venMo</label> -->
+<input venMo='venMo' placeholder='venMo' />
+
+<input type="submit" />
+
+  <!-- <ul id='riders-list'></ul> -->
+
+</form>
 </main>
-<script src="index.js"></script>
-
-
+<script src='index.js'></script>
 </body>
 </html>

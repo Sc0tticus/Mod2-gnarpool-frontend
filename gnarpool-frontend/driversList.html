@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drivers List</title>
+  
+</head>
+<body>
+  <header>
+    <h1>List of Drivers</h1>
+  </header>
+
+  <form action="http://localhost:3001/driversList.html" method="GET">
+    <select date="date" id="date-filter-select"></select>
+    <select resort="resort" id="resort-filter-select"></select>
+    <select pass="pass" id="pass-filter-select"></select>
+    <input type='submit'/>
+  </form>
+
+   <ul id='drivers-list'></ul> 
+
+</body>
+<script src = 'driversList.js'></script>
+</html>
