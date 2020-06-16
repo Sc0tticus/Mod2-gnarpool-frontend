@@ -38,7 +38,7 @@ function renderDriverInfo(name, phone, email, date, time, resort, pass, venMo){
   VenmoElement.innerText = venMo
 
   driverShowMain.append(
-    gitnameElement,
+    nameElement,
     phoneElement,
     emailElement,
     dateElement,
