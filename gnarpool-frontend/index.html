@@ -10,15 +10,19 @@
   <section id = "hero">
   <h1>Gnarpool</h1>
   <div class="call-to-action">
-    <a href='#'>Get started</a>
+    <a href='#main'>Get started</a>
   </div>
   </section>
 
-  <main>
+  <main id="main">
 
 
 <div class="drivers-column">
   <h2><a href='http://localhost:3001/driversList.html'> Drivers </a></h2>
+  <p>
+    Enter your info below to look for a rider,
+    or click the above link to see who else is driving.
+  </p>
   <form method='POST' action='http://localhost:3000/drivers'>
     <input name="name" placeholder="Name" />
     <input name="phone" placeholder="Phone" />
@@ -36,6 +40,10 @@
 
 <div class="riders-column">
   <h2><a href='http://localhost:3001/ridersList.html'> Riders </a></h2>
+  <p>
+    Enter your info below to look for a driver,
+    or click the above link to see who else is riding.
+  </p>
   <form method='POST' action='http://localhost:3000/riders'>
     <input name='Name' placeholder='Name' />
     <input phone='Phone' placeholder='Phone' />

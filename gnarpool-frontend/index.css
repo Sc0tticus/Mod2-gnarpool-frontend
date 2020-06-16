@@ -60,7 +60,7 @@ body {
 }
 
 #hero {
-    height: 90vh;
+    height: 100vh;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -102,12 +102,34 @@ h2 {
 
 main {
     display: flex;
+    padding-top: 25px;
+    padding-left: 100px;
+}
+
+p {
+    width: 75%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .drivers-column {
+    
     height: 100px;
+    justify-content: left;
 }
 
 .riders-column {
     height: 100px;
+    justify-content: left;
+}
+
+input {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=button] {
+    width: 50%;
 }
