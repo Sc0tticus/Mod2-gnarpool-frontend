@@ -10,15 +10,28 @@
   <header>
     <h1>List of Drivers</h1>
   </header>
-
+<p>Filter Driver By Resort
   <form action="http://localhost:3001/driversList.html" method="GET">
-    <select date="date" id="dropdown1"></select>
+    <select resort="resort" id="dropdown1"></select>
+    <input type='submit'/>
+  </form>
+</p>
+
+<p>Filter Driver By Date-Time
+  <form action="http://localhost:3001/driversList.html" method="GET">
     <select resort="resort" id="dropdown2"></select>
+    <input type='submit'/>
+  </form>
+</p>
+
+  <p>Filter Driver By Pass
+<form action="http://localhost:3001/driversList.html" method="GET">
     <select pass="pass" id="dropdown3"></select>
     <input type='submit'/>
   </form>
+</p>
 
-   <ul id='drivers-list'></ul> 
+   <ul id='drivers-list'></ul>
 
 </body>
 <script src = 'driversList.js'></script>
