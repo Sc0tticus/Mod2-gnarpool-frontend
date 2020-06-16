@@ -32,14 +32,3 @@ fetch('http://localhost:3000/riders')
       ridersList.appendChild(li)
     })
   }
-
-  // function createOptions(powers){
-  //   powers.forEach(power => {
-  //     let option = document.createElement('option')
-
-  //     option.innerText = power.name 
-  //     option.value = power.id
-
-  //     dropdown.appendChild(option)
-  //   })
-  // }

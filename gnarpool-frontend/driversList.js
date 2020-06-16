@@ -34,9 +34,6 @@ fetch('http://localhost:3000/drivers')
       option2.innerText = driver.date
       option3.innerText = driver.pass
 
-      // option.innerText = power.name 
-      // option.value = power.id
-
       dropdown1.appendChild(option1)
       dropdown2.appendChild(option2)
       dropdown3.appendChild(option3)
