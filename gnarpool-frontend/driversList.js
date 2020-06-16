@@ -1,41 +1,57 @@
-let dropdown1 = document.querySelector('#dropdown1')
-let dropdown2 = document.querySelector('#dropdown2')
-let dropdown3 = document.querySelector('#dropdown3')
+const searchParams = new URLSearchParams(window.location.search);
 
-fetch('http://localhost:3000/drivers')
+const resortQuery = searchParams.get('resort');
+const dateQuery = searchParams.get('date');
+const passQuery = searchParams.get('pass');
+
+const dropdown1 = document.querySelector('#dropdown1');
+const dropdown2 = document.querySelector('#dropdown2');
+const dropdown3 = document.querySelector('#dropdown3');
+
+const baseURL = "http://localhost:3000";
+let driversURL = `${baseURL}/drivers`;
+
+if (resortQuery){
+  driversURL = `${driversURL}?resort=${resortQuery}`;
+}
+
+if (dateQuery){
+  driversURL = `${driversURL}?date=${dateQuery}`;
+}
+
+if (passQuery){
+  driversURL = `${driversURL}?pass=${passQuery}`;
+}
+
+fetch(driversURL)
   .then(response => response.json())
   .then(showDrivers)
 
-fetch('http://localhost:3000/drivers')
+fetch(driversURL)
   .then(response => response.json())
   .then(showDriverOptions) 
 
   const driversList = document.getElementById('drivers-list')
 
   function showDrivers(drivers){
-    console.log(drivers)
     drivers.forEach(driver => {
-      
       let li = document.createElement('li')
-  
       li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a>`
-      
       driversList.appendChild(li)
     })
   }
 
   function showDriverOptions(drivers){
     drivers.forEach(driver => {
-      let option1 = document.createElement('option')
-      let option2 = document.createElement('option')
-      let option3 = document.createElement('option')
-
-      option1.innerText = driver.resort
-      option2.innerText = driver.date
-      option3.innerText = driver.pass
-
-      dropdown1.appendChild(option1)
-      dropdown2.appendChild(option2)
-      dropdown3.appendChild(option3)
+      addOption(driver.resort, dropdown1)
+      addOption(driver.date, dropdown2)
+      addOption(driver.pass, dropdown3)
     })
+  }
+
+  function addOption(element, dropdown) {
+    let option = document.createElement('option')
+    option.innerText = element
+    option.value = element
+    dropdown.appendChild(option)
   }
