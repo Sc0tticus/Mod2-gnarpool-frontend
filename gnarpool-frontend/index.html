@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css" type="text/css">
   <title>Gnarpool</title>
 </head>
+
 <body>
-  <section id = "hero">
-  <h1>Gnarpool</h1>
-  <div class="call-to-action">
-    <a href='#main'>Get started</a>
-  </div>
+  <section id="hero">
+    <h1>Gnarpool</h1>
+    <div class="call-to-action">
+      <a href='#main'>Get started</a>
+    </div>
   </section>
 
   <main id="main">
 
 
-<div class="drivers-column">
-  <h2><a href='http://localhost:3001/driversList.html'> Drivers </a></h2>
-  <p>
-    Enter your info below to look for a rider,
-    or click the above link to see who else is driving.
-  </p>
-  <form method='POST' action='http://localhost:3000/drivers'>
-    <input name="name" placeholder="Name" />
-    <input name="phone" placeholder="Phone" />
-    <input name="email" placeholder="Email" />
-    <input date='date' placeholder='Date' />
-    <input time='time' placeholder='Time' />
-    <input name="resort" placeholder="Resort" />
-    <input name="pass" placeholder="Pass" />
-    <input name="Venmo" placeholder="Venmo" />
-    <input type='submit' />
-  </form>
+    <div class="drivers-column">
+      <h2><a href='http://localhost:3001/driversList.html'> Drivers </a></h2>
+      <p>
+        Enter your info below to look for a rider,
+        or click the above link to see who else is driving.
+      </p>
+      <form method='POST' action='http://localhost:3000/drivers'>
+        <input name="name" placeholder="Name" />
+        <input name="phone" placeholder="Phone" />
+        <input name="email" placeholder="Email" />
+        <input name="resort" placeholder="Resort" />
+        <input name="pass" placeholder="Pass" />
+        <input name="Venmo" placeholder="Venmo" />
+        <input name="time" type="datetime-local">
+        <input type='submit' />
+      </form>
 
-</div>
+    </div>
 
 
-<div class="riders-column">
-  <h2><a href='http://localhost:3001/ridersList.html'> Riders </a></h2>
-  <p>
-    Enter your info below to look for a driver,
-    or click the above link to see who else is riding.
-  </p>
-  <form method='POST' action='http://localhost:3000/riders'>
-    <input name='Name' placeholder='Name' />
-    <input phone='Phone' placeholder='Phone' />
-    <input email='Email' placeholder='Email' />
-    <input date='Date' placeholder='Date' />
-    <input time='Time' placeholder='Time' />
-    <input resort='Resort' placeholder='Resort' />
-    <input pass='Pass' placeholder='Pass' />
-    <input venMo='Venmo' placeholder='Venmo' />
-    <input type="submit" />
-  </form>
-</div>
+    <div class="riders-column">
+      <h2><a href='http://localhost:3001/ridersList.html'> Riders </a></h2>
+      <p>
+        Enter your info below to look for a driver,
+        or click the above link to see who else is riding.
+      </p>
+      <form method='POST' action='http://localhost:3000/riders'>
+        <input name='Name' placeholder='Name' />
+        <input phone='Phone' placeholder='Phone' />
+        <input email='Email' placeholder='Email' />
+        <input resort='Resort' placeholder='Resort' />
+        <input pass='Pass' placeholder='Pass' />
+        <input venMo='Venmo' placeholder='Venmo' />
+        <input name="time" type="datetime-local">
+        <input type="submit" />
+      </form>
+    </div>
 
-</main>
-<script src='index.js'></script>
+  </main>
+  <script src='index.js'></script>
 </body>
+
 </html>
