@@ -2,46 +2,47 @@
 <html lang='en'>
 
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='stylesheet' href='index.css' type='text/css'>
-  <title>Gnarpool</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="index.css" type="text/css"> -->
+  <link rel="stylesheet" href="driversList.css" type="text/css">
+  <title>Drivers List</title>
+
 </head>
-
+<h1>Gnarpool</h1>
 <body>
-  <section id='hero'>
-  <header>
-    <h1>List of Drivers</h1>
-    <div class='call-to-action'>
-      
-    </div>
-  </section>
-  </header>
 
+  <div class="filter-row">
 
-<p>Filter Driver By Resort
-  <form action='http://localhost:3001/driversList.html' method='GET'>
-    <select name='resort' id='dropdown1'></select>
-    <input type='submit'/>
-  </form>
-</p>
+    <h2>Filter Driver By Resort</h2>
+    <p>
+    <form action="http://localhost:3001/driversList.html" method="GET">
+      <select name="resort" id="dropdown1"></select>
+      <input type='submit' />
+    </form>
+    </p>
+    
 
-<p>Filter Driver By Date-Time
-  <form action='http://localhost:3001/driversList.html' method='GET'>
-    <select name='date' id='dropdown2'></select>
-    <input type='submit'/>
-  </form>
-</p>
+    <p>Filter Driver By Date-Time
+    <form action="http://localhost:3001/driversList.html" method="GET">
+      <select name="date" id="dropdown2"></select>
+      <input type='submit' />
+    </form>
+    </p>
 
-  <p>Filter Driver By Pass
-<form action='http://localhost:3001/driversList.html' method='GET'>
-    <select name='pass' id='dropdown3'></select>
-    <input type='submit'/>
-  </form>
-</p>
+    <p>Filter Driver By Pass
+    <form action="http://localhost:3001/driversList.html" method="GET">
+      <select name="pass" id="dropdown3"></select>
+      <input type='submit' />
+    </form>
+    </p>
+  </div>
+  
 
-   <ul id='drivers-list'></ul>
-
+  <div class=drivers>
+  <ul id='drivers-list'></ul>
+  </div>
 </body>
 <script src = 'driversList.js'></script>
 </html>

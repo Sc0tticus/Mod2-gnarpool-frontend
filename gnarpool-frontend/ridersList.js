@@ -55,3 +55,4 @@ fetch(ridersURL)//
     option.value = element//
     dropdown.appendChild(option)//
   }//
+

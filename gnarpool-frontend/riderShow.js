@@ -57,12 +57,13 @@ function showRides(rides){
   })
   }
 
+
 fetch(`http://localhost:3000/riders/${id}`)
   .then(response => response.json())
   .then(rider => handleInfo(rider))
 
-function handleInfo(rider){
-  renderRiderInfo(rider.name, rider.phone, rider.email, rider.date, rider.time, rider.resort, rider.pass, rider.venMo)
+function handleInfo(rider) {
+  renderRiderInfo(rider)
 }
 
 const riderShowMain = document.getElementById('rider-show-main')
@@ -93,13 +94,17 @@ function renderRiderInfo(name, phone, email, date, time, resort, pass, venMo){
   const VenmoElement = document.createElement('p')
   VenmoElement.innerText = venMo
 
-  riderShowMain.append(
-    nameElement,
-    phoneElement,
-    emailElement,
-    dateElement,
-    timeElement, 
-    resortElement,
-    passElement, 
-    VenmoElement)
+
+fetch(`http://localhost:3000/drivers/`)
+  .then(response => response.json())
+  .then(driver => renderDriversOptions(driver))
+
+function renderDriversOptions(drivers) {
+  console.log(drivers)
+  drivers.forEach(driver => {
+    let option = document.createElement('option')
+    option.innerText = driver.name
+    option.value = driver
+    ridersDropdown.appendChild(option)
+  })
 }
