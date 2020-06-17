@@ -5,10 +5,10 @@ const driversQuery = searchParams.get('driver');
 const ridersQuery = searchParams.get('rider');
 
 const driversDropdown = document.querySelector('#driver-dropdown');
-console.log("YOyo", driversDropdown)
+
 
 const ridersDropdown = document.querySelector('#rider-dropdown');
-console.log("YO", ridersDropdown)
+
 
 const baseURL = 'http://localhost:3000';
 
@@ -23,7 +23,7 @@ function showDriverOptions(drivers){
   drivers.forEach(driver => {
     let option = document.createElement('option')
     option.innerText = driver.name
-    option.value = driver.name
+    option.value = driver.id
     driversDropdown.appendChild(option)
   })
 }
@@ -36,8 +36,7 @@ fetch(ridersURL)
     riders.forEach(rider => {
       let option = document.createElement('option')
       option.innerText = rider.name
-      option.value = rider.name
-      console.log("40",ridersDropdown)
+      option.value = rider.id
       ridersDropdown.appendChild(option)
     })
   }
@@ -51,7 +50,7 @@ fetch(`http://localhost:3000/rides`)
   .then(showRides)
 
 function handleInfo(driver){
-  renderDriverInfo(driver.name, /*driver.id,*/ driver.phone, driver.email, driver.date, driver.time, driver.resort, driver.pass, driver.venMo, driver.rides)
+  renderDriverInfo(driver.name, driver.phone, driver.email, driver.date, driver.time, driver.resort, driver.pass, driver.venMo, driver.rides)
 }
 
 const driverShowMain = document.getElementById('driver-show-main')
@@ -101,7 +100,6 @@ function renderDriverInfo(name, phone, email, date, time, resort, pass, venMo/*,
 
   driverShowMain.append(
     nameElement,
-    /*idElement,*/
     phoneElement,
     emailElement,
     dateElement,
@@ -110,5 +108,5 @@ function renderDriverInfo(name, phone, email, date, time, resort, pass, venMo/*,
     passElement, 
     VenmoElement)
 
-  /*driversRidesList.append(ridesElement)*/
+  
 }
