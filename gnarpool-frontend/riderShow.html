@@ -8,7 +8,15 @@
 <body>
   <h1>Rider Contact Info</h1>
   <main id='rider-show-main'>
-
+    <div class='riders-column'>
+      <p>Rides</p>
+      <p>This is a list of this Riders going on rides.</p>
+      <form method='POST' action='http://localhost:3000/rides'>
+      <input name = "driver name" placeholder="Driver Name"/>
+      <input name = "rider name" placeholder="Rider Name"/>
+      <input type='submit'/>
+      </form>
+    </div>
   </main>
 </body>
   <script src = 'riderShow.js'></script>
