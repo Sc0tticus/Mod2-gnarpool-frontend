@@ -52,7 +52,6 @@ function showRides(rides){
   rides.forEach(ride => {
     let li = document.createElement('li')
     li.innerHTML = ride.id
-    /*`<a href='driverShow.html?id=${ride.id}'>${ride.id}</a>`*/
     driversRidesList.appendChild(li)
   })
   }
@@ -68,32 +67,22 @@ function handleInfo(rider) {
 
 const riderShowMain = document.getElementById('rider-show-main')
 
-function renderRiderInfo(name, phone, email, date, time, resort, pass, venMo){
+function renderRiderInfo(rider){
+  addRiderInfo(rider.name)
+  addRiderInfo(rider.phone)
+  addRiderInfo(rider.email)
+  addRiderInfo(rider.time)
+  addRiderInfo(rider.resort)
+  addRiderInfo(rider.pass)
+  addRiderInfo(rider.VenMo)
+}
 
-  const nameElement = document.createElement('p')
-  nameElement.innerText = name
-
-  const phoneElement = document.createElement('p')
-  phoneElement.innerText = phone
-
-  const emailElement = document.createElement('p')
-  emailElement.innerText = email
-
-  const dateElement = document.createElement('p')
-  dateElement.innerText = date
-
-  const timeElement = document.createElement('p')
-  timeElement.innerText = time
-
-  const resortElement = document.createElement('p')
-  resortElement.innerText = resort
-
-  const passElement = document.createElement('p')
-  passElement.innerText = pass
-
-  const VenmoElement = document.createElement('p')
-  VenmoElement.innerText = venMo
-
+function addRiderInfo(stat) {
+  const ele = document.createElement('p')
+  ele.innerText = stat
+  riderShowMain.append(ele)
+}
+ 
 
 fetch(`http://localhost:3000/drivers/`)
   .then(response => response.json())

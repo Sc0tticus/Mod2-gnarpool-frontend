@@ -60,7 +60,6 @@ function showRides(rides){
   rides.forEach(ride => {
     let li = document.createElement('li')
     li.innerHTML = ride.id
-    /*`<a href='driverShow.html?id=${ride.id}'>${ride.id}</a>`*/
     
     driversRidesList.appendChild(li)
   })
@@ -70,9 +69,6 @@ function renderDriverInfo(name, phone, email, date, time, resort, pass, venMo/*,
 
   const nameElement = document.createElement('p')
   nameElement.innerText = name
-
-  /*const idElement = document.createElement('p')
-  idElement.innerText = id?*/
 
   const phoneElement = document.createElement('p')
   phoneElement.innerText = phone
@@ -107,6 +103,4 @@ function renderDriverInfo(name, phone, email, date, time, resort, pass, venMo/*,
     resortElement,
     passElement, 
     VenmoElement)
-
-  
 }
