@@ -36,7 +36,8 @@ fetch(driversURL)
   function showDrivers(drivers){
     drivers.forEach(driver => {
       let li = document.createElement('li')
-      li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a>`
+      li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a> 
+                      is going to ${driver.resort} at ${driver.time}`
       driversList.appendChild(li)
     })
   }
