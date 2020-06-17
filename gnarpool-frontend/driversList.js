@@ -7,18 +7,16 @@ const passQuery = searchParams.get('pass');
 const dropdown1 = document.querySelector('#dropdown1');
 const dropdown2 = document.querySelector('#dropdown2');
 const dropdown3 = document.querySelector('#dropdown3');
-
+console.log(dropdown1)
 const baseURL = "http://localhost:3000";
 let driversURL = `${baseURL}/drivers`;
 
 if (resortQuery){
   driversURL = `${driversURL}?resort=${resortQuery}`;
 }
-
 if (dateQuery){
   driversURL = `${driversURL}?date=${dateQuery}`;
 }
-
 if (passQuery){
   driversURL = `${driversURL}?pass=${passQuery}`;
 }
@@ -36,7 +34,9 @@ fetch(driversURL)
   function showDrivers(drivers){
     drivers.forEach(driver => {
       let li = document.createElement('li')
-      li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a>`
+      li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a> 
+                      is going to ${driver.resort} at
+                      ${Date(Date.parse(driver.time))}`
       driversList.appendChild(li)
     })
   }

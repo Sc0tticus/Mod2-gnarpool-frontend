@@ -1,49 +1,44 @@
 const searchParams = new URLSearchParams(window.location.search)
 const id = searchParams.get('id')
 
+const ridersDropdown = document.querySelector("#ridersDropdown")
+console.log(ridersDropdown)
+
 fetch(`http://localhost:3000/riders/${id}`)
   .then(response => response.json())
   .then(rider => handleInfo(rider))
 
-function handleInfo(rider){
-  renderRiderInfo(rider.name, rider.phone, rider.email, rider.date, rider.time, rider.resort, rider.pass, rider.venMo)
+function handleInfo(rider) {
+  renderRiderInfo(rider)
 }
 
 const riderShowMain = document.getElementById('rider-show-main')
 
-function renderRiderInfo(name, phone, email, date, time, resort, pass, venMo){
+function renderRiderInfo(rider) {
+  addRiderInfo(rider.name)
+  addRiderInfo(rider.phone)
+  addRiderInfo(rider.email)
+  addRiderInfo(rider.pass)
+  addRiderInfo(rider.resort)
+  addRiderInfo(rider.time)
+}
 
-  const nameElement = document.createElement('h2')
-  nameElement.innerText = name
+function addRiderInfo(thing) {
+  const ele = document.createElement('h2')
+  ele.innerText = thing
+  riderShowMain.append(ele)
+}
 
-  const phoneElement = document.createElement('h2')
-  phoneElement.innerText = phone
+fetch(`http://localhost:3000/drivers/`)
+  .then(response => response.json())
+  .then(driver => renderDriversOptions(driver))
 
-  const emailElement = document.createElement('h2')
-  emailElement.innerText = email
-
-  const dateElement = document.createElement('h2')
-  dateElement.innerText = date
-
-  const timeElement = document.createElement('h2')
-  timeElement.innerText = time
-
-  const resortElement = document.createElement('h2')
-  resortElement.innerText = resort
-
-  const passElement = document.createElement('h2')
-  passElement.innerText = pass
-
-  const VenmoElement = document.createElement('h2')
-  VenmoElement.innerText = venMo
-
-  riderShowMain.append(
-    nameElement,
-    phoneElement,
-    emailElement,
-    dateElement,
-    timeElement, 
-    resortElement,
-    passElement, 
-    VenmoElement)
+function renderDriversOptions(drivers) {
+  console.log(drivers)
+  drivers.forEach(driver => {
+    let option = document.createElement('option')
+    option.innerText = driver.name
+    option.value = driver
+    ridersDropdown.appendChild(option)
+  })
 }
