@@ -1,40 +1,57 @@
-let dropdown1 = document.querySelector('#dropdown1')
-let dropdown2 = document.querySelector('#dropdown2')
-let dropdown3 = document.querySelector('#dropdown3')
+const searchParams = new URLSearchParams(window.location.search);//
 
-fetch('http://localhost:3000/riders')
-  .then(response => response.json())
-  .then(showRiders)
+const resortQuery = searchParams.get('resort');//
+const dateQuery = searchParams.get('date');//
+const passQuery = searchParams.get('pass');//
 
-fetch('http://localhost:3000/riders')
-  .then(response => response.json())
-  .then(showRiderOptions) 
+const dropdown1 = document.querySelector('#dropdown1');//
+const dropdown2 = document.querySelector('#dropdown2');//
+const dropdown3 = document.querySelector('#dropdown3');//
 
-  const driversList = document.getElementById('riders-list')
+const baseURL = "http://localhost:3000";//
+let ridersURL = `${baseURL}/riders`;//
 
-  function showRiders(riders){
-    riders.forEach(rider => {
-      
-      let li = document.createElement('li')
-  
-      li.innerHTML = `<a href='driverShow.html?id=${rider.id}'>${rider.name}</a>`
-      
-      driversList.appendChild(li)
-    })
-  }
+if (resortQuery){//
+  ridersURL = `${ridersURL}?resort=${resortQuery}`;//
+}//
 
-  function showRiderOptions(riders){
-    riders.forEach(rider => {
-      let option1 = document.createElement('option')
-      let option2 = document.createElement('option')
-      let option3 = document.createElement('option')
+if (dateQuery){//
+  ridersURL = `${ridersURL}?date=${dateQuery}`;//
+}//
 
-      option1.innerText = rider.resort
-      option2.innerText = rider.date
-      option3.innerText = rider.pass
+if (passQuery){//
+  ridersURL = `${ridersURL}?pass=${passQuery}`;//
+}//
 
-      dropdown1.appendChild(option1)
-      dropdown2.appendChild(option2)
-      dropdown3.appendChild(option3)
-    })
-  }
+fetch(ridersURL)//
+  .then(response => response.json())//
+  .then(showRiders)//
+
+fetch(ridersURL)//
+  .then(response => response.json())//
+  .then(showRiderOptions) //
+
+  const ridersList = document.getElementById('riders-list')//
+
+  function showRiders(riders){//
+    riders.forEach(rider => {//
+      let li = document.createElement('li')//
+      li.innerHTML = `<a href='riderShow.html?id=${rider.id}'>${rider.name}</a>`//
+      ridersList.appendChild(li)//
+    })//
+  }//
+
+  function showRiderOptions(riders){//
+    riders.forEach(rider => {//
+      addOption(rider.resort, dropdown1)//
+      addOption(rider.date, dropdown2)//
+      addOption(rider.pass, dropdown3)//
+    })//
+  }//
+
+  function addOption(element, dropdown) {//
+    let option = document.createElement('option')//
+    option.innerText = element//
+    option.value = element//
+    dropdown.appendChild(option)//
+  }//
