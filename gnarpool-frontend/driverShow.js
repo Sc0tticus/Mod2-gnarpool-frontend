@@ -1,6 +1,47 @@
 const searchParams = new URLSearchParams(window.location.search)
 const id = searchParams.get('id')
 
+const driversQuery = searchParams.get('driver');
+const ridersQuery = searchParams.get('rider');
+
+const driversDropdown = document.querySelector('#driver-dropdown');
+console.log("YOyo", driversDropdown)
+
+const ridersDropdown = document.querySelector('#rider-dropdown');
+console.log("YO", ridersDropdown)
+
+const baseURL = 'http://localhost:3000';
+
+let driversURL = `${baseURL}/drivers`;
+let ridersURL = `${baseURL}/riders`;
+
+fetch(driversURL)
+  .then(response => response.json())
+  .then(showDriverOptions) 
+
+function showDriverOptions(drivers){
+  drivers.forEach(driver => {
+    let option = document.createElement('option')
+    option.innerText = driver.name
+    option.value = driver.name
+    driversDropdown.appendChild(option)
+  })
+}
+
+fetch(ridersURL)
+  .then(response => response.json())
+  .then(showRiderOptions)
+
+  function showRiderOptions(riders){
+    riders.forEach(rider => {
+      let option = document.createElement('option')
+      option.innerText = rider.name
+      option.value = rider.name
+      console.log("40",ridersDropdown)
+      ridersDropdown.appendChild(option)
+    })
+  }
+
 fetch(`http://localhost:3000/drivers/${id}`)
   .then(response => response.json())
   .then(driver => handleInfo(driver))
@@ -19,13 +60,10 @@ const driversRidesList = document.getElementById('drivers-list-of-rides')
 function showRides(rides){
   rides.forEach(ride => {
     let li = document.createElement('li')
-    li.innerHTML = `<a href='driverShow.html?id=${ride.id}'>${ride.id}</a>`
-    /*li.innerHTML = `<a href='driverShow.html?id=${ride.id}'></a>`*/
+    li.innerHTML = ride.id
+    /*`<a href='driverShow.html?id=${ride.id}'>${ride.id}</a>`*/
+    
     driversRidesList.appendChild(li)
-    /*const ridesElement = document.createElement('p')
-    ridesElement.innerText = rides*/
-
-    /*driversRidesList.append(ridesElement)*/
   })
   }
 

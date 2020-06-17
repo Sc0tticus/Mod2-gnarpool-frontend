@@ -8,7 +8,7 @@ const dropdown1 = document.querySelector('#dropdown1');
 const dropdown2 = document.querySelector('#dropdown2');
 const dropdown3 = document.querySelector('#dropdown3');
 
-const baseURL = "http://localhost:3000";
+const baseURL = 'http://localhost:3000';
 let driversURL = `${baseURL}/drivers`;
 
 if (resortQuery){
@@ -53,5 +53,6 @@ fetch(driversURL)
     let option = document.createElement('option')
     option.innerText = element
     option.value = element
+    console.log(dropdown)
     dropdown.appendChild(option)
   }
