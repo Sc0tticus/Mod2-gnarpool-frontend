@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Driver Show Page</h1>
-  <main id='driver-show-main'>
+<html lang='en'>
 
-  </main>
-  <div class='drivers-column'>
-    <p>Rides</p>
-    <p>This is a list of this drivers availabe rides.</p>
-    <form method='POST' action='http://localhost:3000/rides'>
-    <input name = "driver name" placeholder="Driver Name"/>
-    <input name = "rider name" placeholder="Rider Name"/>
-    <input type='submit'/>
-    </form>
-  </div>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Gnarpool</title>
+</head>
+
+<body>
+  <h1>Driver Contact Info</h1>
+  <main id='driver-show-main'> </main>
+
+    <h2>Driver's Availability</h2>
+    <p>A list of available ride dates.</p>
+  <ul id='drivers-list-of-rides'></ul>
+
+    <h2>Create A Ride</h2>
+    <p>Found a Driver ? Create a Ride!</p>
+
+      <form method='POST' action='http://localhost:3000/rides'>
+        <select name = 'driver name' id='driver-dropdown'/></select>
+        <select name = 'rider name' id='rider-dropdown'/></select>
+        <input type='submit'/>
+        </form>
+ 
+
 </body>
   <script src = 'driverShow.js'></script>
 </html>

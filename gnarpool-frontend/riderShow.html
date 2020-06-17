@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Gnarpool</title>
 </head>
 <body>
   <h1>Rider Contact Info</h1>
-  <main id='rider-show-main'>
-    <div class='riders-column'>
-      <p>Rides</p>
-      <p>This is a list of this Riders going on rides.</p>
-      <form method='POST' action='http://localhost:3000/rides'>
-      <input name = "driver name" placeholder="Driver Name"/>
-      <input name = "rider name" placeholder="Rider Name"/>
-      <input type='submit'/>
-      </form>
-    </div>
-  </main>
+  <main id='rider-show-main'></main>
 
-  <form action="http://localhost:3000/rides" method="POST">
-    <select name="rider" id="ridersDropdown"></select>
-    <input type='submit' />
-  </form>
+  <h2>Rider's Availability</h2>
+    <p>A list of desired ride dates.</p>
+    <ul id='drivers-list-of-rides'></ul>
+
+    <h2>Create A Ride</h2>
+    <p>Found a Rider ? Create a Ride!</p>
+    <div class='riders-column'>
+
+      <form method='POST' action='http://localhost:3000/rides'>
+        
+        <select name = 'driver_id' id='driver-dropdown'/></select>
+        <select name = 'rider_id' id='rider-dropdown'/></select>
+        <input type='submit'/>
+        </form>
+
+  </div>
 </body>
   <script src = 'riderShow.js'></script>
 </html>
