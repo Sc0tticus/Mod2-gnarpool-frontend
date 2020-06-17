@@ -6,19 +6,22 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Driver Show Page</h1>
-  <main id='driver-show-main'>
+  <h1>Driver Contact Info</h1>
+  <main id='driver-show-main'> </main>
 
-  </main>
-  <div class='drivers-column'>
-    <p>Rides</p>
-    <p>This is a list of this drivers availabe rides.</p>
-    <form method='POST' action='http://localhost:3000/rides'>
-    <input name = "driver name" placeholder="Driver Name"/>
-    <input name = "rider name" placeholder="Rider Name"/>
-    <input type='submit'/>
-    </form>
+    <h2>Driver's Availability</h2>
+    <p>A list of availabile ride dates.</p>
+
+    <h2>Create A Ride</h2>
+    <p>Found a Driver ? Create a Ride!</p>
+    <div class='drivers-column'>
+      <form method='POST' action='http://localhost:3000/rides'>
+        <input name = "driver name" placeholder="Driver Name"/>
+        <input name = "rider name" placeholder="Rider Name"/>
+        <input type='submit'/>
+        </form>
   </div>
+
 </body>
   <script src = 'driverShow.js'></script>
 </html>

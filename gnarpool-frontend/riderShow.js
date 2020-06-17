@@ -13,28 +13,28 @@ const riderShowMain = document.getElementById('rider-show-main')
 
 function renderRiderInfo(name, phone, email, date, time, resort, pass, venMo){
 
-  const nameElement = document.createElement('h2')
+  const nameElement = document.createElement('p')
   nameElement.innerText = name
 
-  const phoneElement = document.createElement('h2')
+  const phoneElement = document.createElement('p')
   phoneElement.innerText = phone
 
-  const emailElement = document.createElement('h2')
+  const emailElement = document.createElement('p')
   emailElement.innerText = email
 
-  const dateElement = document.createElement('h2')
+  const dateElement = document.createElement('p')
   dateElement.innerText = date
 
-  const timeElement = document.createElement('h2')
+  const timeElement = document.createElement('p')
   timeElement.innerText = time
 
-  const resortElement = document.createElement('h2')
+  const resortElement = document.createElement('p')
   resortElement.innerText = resort
 
-  const passElement = document.createElement('h2')
+  const passElement = document.createElement('p')
   passElement.innerText = pass
 
-  const VenmoElement = document.createElement('h2')
+  const VenmoElement = document.createElement('p')
   VenmoElement.innerText = venMo
 
   riderShowMain.append(
