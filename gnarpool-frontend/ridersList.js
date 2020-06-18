@@ -36,7 +36,7 @@ fetch(ridersURL)
   function showRiders(riders){
     riders.forEach(rider => {
       let li = document.createElement('li')
-      li.innerHTML = `<a href='driverShow.html?id=${rider.id}'>${rider.name}</a> 
+      li.innerHTML = `<a href='riderShow.html?id=${rider.id}'>${rider.name}</a> 
                       is going to ${rider.resort} at
                       ${cleanUpDate(rider.time)}`
       ridersList.appendChild(li)

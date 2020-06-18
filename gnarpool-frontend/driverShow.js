@@ -65,17 +65,17 @@ const driversRidesList = document.getElementById('drivers-list-of-rides')
   const driverShowMain = document.getElementById('driver-show-main')
 
   function renderDriverInfo(driver){
-    addDriverInfo(driver.name)
-    addDriverInfo(driver.phone)
-    addDriverInfo(driver.email)
-    addDriverInfo(driver.time)
-    addDriverInfo(driver.resort)
-    addDriverInfo(driver.pass)
-    addDriverInfo(driver.VenMo)
+    addDriverInfo("Name:", driver.name)
+    addDriverInfo("Phone:", driver.phone)
+    addDriverInfo("Email:", driver.email)
+    addDriverInfo("Time:",driver.time)
+    addDriverInfo("Resort:",driver.resort)
+    addDriverInfo("Pass:",driver.pass)
+    addDriverInfo("VenMo:", driver.VenMo)
   }
   
-  function addDriverInfo(stat) {
+  function addDriverInfo(id, stat) {
     const ele = document.createElement('p')
-    ele.innerText = stat
+    ele.innerText = id + " " + stat
     driverShowMain.append(ele)
   }
