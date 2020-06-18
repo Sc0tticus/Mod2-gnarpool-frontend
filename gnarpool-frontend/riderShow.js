@@ -21,7 +21,7 @@ function showDriverOptions(drivers){
   drivers.forEach(driver => {
     let option = document.createElement('option')
     option.innerText = driver.name
-    option.value = parseInt(driver.id)
+    option.value = driver.id
     driversDropdown.appendChild(option)
   })
 }
@@ -34,7 +34,7 @@ fetch(ridersURL)
     riders.forEach(rider => {
       let option = document.createElement('option')
       option.innerText = rider.name
-      option.value = parseInt(rider.id)
+      option.value = rider.id
       ridersDropdown.appendChild(option)
     })
   }
@@ -74,7 +74,6 @@ function renderRiderInfo(rider){
   addRiderInfo("Pass:",rider.pass)
   addRiderInfo("VenMo:",rider.VenMo)
 }
-
 
 function addRiderInfo(id,stat) {
   const ele = document.createElement('p')
