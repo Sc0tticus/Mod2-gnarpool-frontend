@@ -68,7 +68,7 @@ body {
     background-repeat: no-repeat;
     background-image: 
         /* linear-gradient(hsl(240,50%,0%), hsl(240, 50%, 5%)) */
-        url(./I-70-traffic-milehightraveler.jpg);
+        url(./traffic-crop.jpg);
     background-size: auto;
     background-blend-mode: saturation;
 }
@@ -91,7 +91,7 @@ h2 {
 
 .call-to-action > a {
     padding: 24px 32px;
-    background-color: hsl(214, 25%, 73%);
+    background-color: hsla(214, 43%, 58%, 0.883);
     box-shadow: 0 2px 2px hsl(214, 25%, 20%);
     text-decoration: none;
     color: hsl(335, 99%, 95%);;

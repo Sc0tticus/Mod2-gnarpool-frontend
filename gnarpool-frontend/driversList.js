@@ -37,15 +37,21 @@ fetch(driversURL)
       let li = document.createElement('li')
       li.innerHTML = `<a href='driverShow.html?id=${driver.id}'>${driver.name}</a> 
                       is going to ${driver.resort} at
-                      ${Date(Date.parse(driver.time))}`
+                      ${cleanUpDate(driver.time)}`
       driversList.appendChild(li)
     })
   }
 
+  function cleanUpDate(date) {
+    date = Date(Date.parse(date))
+    date = date.split('(')
+    return date[0]
+  }
+
   function showDriverOptions(drivers){
+    addTimeOption(dropdown2)
     drivers.forEach(driver => {
       addOption(driver.resort, dropdown1)
-      addOption(driver.date, dropdown2)
       addOption(driver.pass, dropdown3)
     })
   }
@@ -54,6 +60,19 @@ fetch(driversURL)
     let option = document.createElement('option')
     option.innerText = element
     option.value = element
+    console.log(dropdown)
+    dropdown.appendChild(option)
+  }
+
+  function addTimeOption(dropdown){
+    let option = document.createElement('option')
+    option.innerText = "Ascending"
+    option.value = "asc"
+    console.log(dropdown)
+    dropdown.appendChild(option)
+    option = document.createElement('option')
+    option.innerText = "Descending"
+    option.value = "desc"
     console.log(dropdown)
     dropdown.appendChild(option)
   }
