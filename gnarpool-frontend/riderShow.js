@@ -66,18 +66,19 @@ function renderRideInfo(rider){
 const riderShowMain = document.getElementById('rider-show-main')
 
 function renderRiderInfo(rider){
-  addRiderInfo(rider.name)
-  addRiderInfo(rider.phone)
-  addRiderInfo(rider.email)
-  addRiderInfo(rider.time)
-  addRiderInfo(rider.resort)
-  addRiderInfo(rider.pass)
-  addRiderInfo(rider.VenMo)
+  addRiderInfo("Name:",rider.name)
+  addRiderInfo("Phone:",rider.phone)
+  addRiderInfo("Email:",rider.email)
+  addRiderInfo("Time:",rider.time)
+  addRiderInfo("Resport:",rider.resort)
+  addRiderInfo("Pass:",rider.pass)
+  addRiderInfo("VenMo:",rider.VenMo)
 }
 
-function addRiderInfo(stat) {
+
+function addRiderInfo(id,stat) {
   const ele = document.createElement('p')
-  ele.innerText = stat
+  ele.innerText = id + " " + stat
   riderShowMain.append(ele)
 }
  
