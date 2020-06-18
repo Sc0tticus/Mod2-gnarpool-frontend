@@ -22,9 +22,6 @@ function showDriverOptions(drivers){
     let option = document.createElement('option')
     option.innerText = driver.name
     option.value = parseInt(driver.id)
-
-    console.log("HI",option.value)
-    
     driversDropdown.appendChild(option)
   })
 }
@@ -42,27 +39,28 @@ fetch(ridersURL)
     })
   }
 
-  fetch(`http://localhost:3000/rides`)
-  .then(response => response.json())
-  .then(showRides)
-
 const driversRidesList = document.getElementById('drivers-list-of-rides')
-
-function showRides(rides){
-  rides.forEach(ride => {
-    let li = document.createElement('li')
-    li.innerHTML = ride.id
-    driversRidesList.appendChild(li)
-  })
-  }
-
 
 fetch(`http://localhost:3000/riders/${id}`)
   .then(response => response.json())
   .then(rider => handleInfo(rider))
 
 function handleInfo(rider) {
+  renderRideInfo(rider)
   renderRiderInfo(rider)
+}
+
+const ridesShow = document.getElementById('rides-show')
+
+function renderRideInfo(rider){
+  console.log(rider.drivers)
+  let ridername = rider.name
+  rider.drivers.forEach(driver => {
+    const ele = document.createElement('p')
+    ele.innerText = ridername + " will be riding with " + driver.name + " at " + driver.time
+    driversRidesList.append(ele)
+  })
+  
 }
 
 const riderShowMain = document.getElementById('rider-show-main')
@@ -83,7 +81,6 @@ function addRiderInfo(stat) {
   riderShowMain.append(ele)
 }
  
-
 fetch(`http://localhost:3000/drivers/`)
   .then(response => response.json())
   .then(driver => renderDriversOptions(driver))
