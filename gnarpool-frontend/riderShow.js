@@ -75,7 +75,6 @@ function renderRiderInfo(rider){
   addRiderInfo("VenMo:",rider.VenMo)
 }
 
-
 function addRiderInfo(id,stat) {
   const ele = document.createElement('p')
   ele.innerText = id + " " + stat
