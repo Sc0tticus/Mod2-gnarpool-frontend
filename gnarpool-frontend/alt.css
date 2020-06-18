@@ -55,6 +55,7 @@ table {
     font-family: 'Spartan', sans-serif;
     height: 100vh;
     display: flex;
+    margin: 15px;
     background-repeat: no-repeat;
     background-image: 
         url(./I-70-traffic-milehightraveler.jpg);
@@ -71,7 +72,6 @@ table {
 
   .row {
     padding-top: 100px;
-    padding-left: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -85,22 +85,17 @@ table {
     flex: 1;
   }
   
-  .contact-card {
+  .orange-column {
+    background-color: rgba(78, 91, 93, 0.212);
     height: 100vh;
   }
   
-  .upcoming-card {
+  .blue-column {
+    background-color: rgba(78, 91, 93, 0.212);
     height: 100vh;
   }
   
-  .create-ride-card {
+  .green-column {
+    background-color: rgba(78, 91, 93, 0.212);
     height: 100vh;
   }
-  ul > li {
-      padding:10px
-  }
-
-  p {
-    width: 75%;
-    padding-top: 15px;
-}
