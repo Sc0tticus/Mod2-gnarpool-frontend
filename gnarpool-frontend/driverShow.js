@@ -54,7 +54,7 @@ fetch(`http://localhost:3000/drivers/${id}`)
     let drivename = driver.name
     driver.riders.forEach(rider => {
       const ele = document.createElement('p')
-      ele.innerText = drivename + " will be riding with " + rider.name + " at " + driver.time
+      ele.innerText = drivename + " will be driving with " + rider.name + " at " + driver.time
       driversRidesList.append(ele)
     })
     
