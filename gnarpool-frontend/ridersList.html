@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel="stylesheet" href="driversList.css" type="text/css">
   <title>Gnarpool</title>
 </head>
+
 <body>
   <header>
-    <h1>List of Riders</h1>
+    <h1>Gnarpool</h1>
   </header>
-<p>Filter Rider By Resort
-  <form action='http://localhost:3001/ridersList.html' method='GET'>
-    <select name='resort' id='dropdown1'></select>
-    <input type='submit'/>
-  </form>
-</p>
+  <div class="filter-row">
+    <h2>Filter Rider By Resort</h2>
+    <form action='http://localhost:3001/ridersList.html' method='GET'>
+      <select name='resort' id='dropdown1'></select>
+      <input type='submit' />
+    </form>
 
-<p>Filter Rider By Date-Time
-  <form action='http://localhost:3001/ridersList.html' method='GET'>
-    <select name='date' id='dropdown2'></select>
-    <input type='submit'/>
-  </form>
-</p>
 
-  <p>Filter Rider By Pass
-<form action='http://localhost:3001/ridersList.html' method='GET'>
-    <select name='pass' id='dropdown3'></select>
-    <input type='submit'/>
-  </form>
-</p>
+    <h2>Filter Rider By Time</h2>
+    <form action='http://localhost:3001/ridersList.html' method='GET'>
+      <select name='date' id='dropdown2'></select>
+      <input type='submit' />
+    </form>
+    </p>
 
-   <ul id='riders-list'></ul>
-
+    <h2>Filter Rider By Pass</h2>
+    <form action='http://localhost:3001/ridersList.html' method='GET'>
+      <select name='pass' id='dropdown3'></select>
+      <input type='submit' />
+    </form>
+    </p>
+  </div>
+  <div class=drivers>
+    <ul id='riders-list'></ul>
+  </div>
 </body>
-<script src = 'ridersList.js'></script>
+<script src='ridersList.js'></script>
+
 </html>
